@@ -146,26 +146,18 @@
 
 
         <div class="mx-auto mt-8 mb-16">
-          <div class="max-w-[900px] mx-auto mt-8 mb-16">
+          <!-- <div class="max-w-[900px] mx-auto mt-8 mb-16">
             <h2>Abstract</h2>
             <p class="text-p">
-              <!-- Controllable human voice generation, particularly for expressive domains like singing, remains a significant challenge. This paper introduces Vevo2, a unified framework for controllable speech and singing voice generation. To tackle issues like the scarcity of annotated singing data and to enable flexible controllability, Vevo2 introduces two audio tokenizers: (1) a unified music-notation-free prosody tokenizer that captures prosody and melody from speech, singing, and even instrumental sounds, and (2) a unified content-style tokenizer that encodes linguistic content, prosody, and style for both speech and singing, while enabling timbre disentanglement. Vevo2 consists of an auto-regressive content-style modeling stage, which aims to enable controllability over text, prosody, and style, as well as a flow-matching acoustic modeling stage that allows for timbre control. Particularly, during the speech-singing joint training of the AR model, we propose both explicit and implicit prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance the Vevo2’s ability to follow text and prosody, we design a multi-objective post-training task that integrates both intelligibility and prosody similarity alignment. Experimental results show that the unified modeling in Vevo2 brings mutual benefits to both speech and singing voice generation. Additionally, Vevo2’s effectiveness across a wide range of synthesis, conversion, and editing tasks for both speech and singing further demonstrates its strong generalization ability and versatility. -->
+              Controllable human voice generation, particularly for expressive domains like singing, remains a significant challenge. This paper introduces Vevo2, a unified framework for controllable speech and singing voice generation. To tackle issues like the scarcity of annotated singing data and to enable flexible controllability, Vevo2 introduces two audio tokenizers: (1) a unified music-notation-free prosody tokenizer that captures prosody and melody from speech, singing, and even instrumental sounds, and (2) a unified content-style tokenizer that encodes linguistic content, prosody, and style for both speech and singing, while enabling timbre disentanglement. Vevo2 consists of an auto-regressive content-style modeling stage, which aims to enable controllability over text, prosody, and style, as well as a flow-matching acoustic modeling stage that allows for timbre control. Particularly, during the speech-singing joint training of the AR model, we propose both explicit and implicit prosody learning strategies to bridge speech and singing voice. Moreover, to further enhance the Vevo2’s ability to follow text and prosody, we design a multi-objective post-training task that integrates both intelligibility and prosody similarity alignment. Experimental results show that the unified modeling in Vevo2 brings mutual benefits to both speech and singing voice generation. Additionally, Vevo2’s effectiveness across a wide range of synthesis, conversion, and editing tasks for both speech and singing further demonstrates its strong generalization ability and versatility.
 
             </p>
-          </div>
+          </div> -->
 
           <div class="mt-8 mb-8" id="gallery">
-            <h4>What can Vevo2 do?</h4>
+            <h4>What can ProSinger do?</h4>
             <p>
-              <b><i>Vevo2</i></b> is a <u>versa</u>tile and controllable <u>voice</u> generation framework designed
-              to
-              unify speech and singing voice. It
-              consists of an auto-regressive (AR) content-style modeling stage, which aims to enable
-              controllability over text, prosody, and style, as well as a flow-matching (FM) acoustic modeling stage
-              that
-              allows for timbre control. It is able to support versatile synthesis, conversion, and editing tasks
-              through a unified
-              inference pipeline.
+              <b><i>ProSinger</i></b> is a controllable singing voice style conversion system that focuses on vocal technique manipulation. Built upon Vevo2 — a unified framework for controllable speech and singing voice generation — it takes original lyrics, a source singing audio, and a phoneme-level technique sequence as input, and outputs a new singing audio that follows the specified technique assignments.
             </p>
 
             <div class="flex mx-auto justify-center max-w-screen-lg py-8">
