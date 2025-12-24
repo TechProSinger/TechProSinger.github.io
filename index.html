@@ -171,6 +171,9 @@
           <div class="mt-8 mb-8" id="gallery">
             <h4>How did we achieve this?</h4>
             <p>
+              Following the definition of singing techniques in GTSinger,
+              we designed a one-hot phoneme-level technique tokenizer to represent six common singing techniques.
+              And we substitute the original style tokens input in Vevo2's AR model with our technique tokens.
               Our finetuning process is fully self-supervised.
               All four tokenizers are freezed. 
               We extended the token embedding dimension of the original AR model to accommodate technique tokens.
@@ -189,10 +192,10 @@
           </div>
 
           <div class="mt-0 mb-8 pt-10" id="tts">
-            <h5>Extend Zero-Shot TTS to Singing Voice Domain</h5>
+            <h4>Fine-Grain Technique Controlled Singing Voice Synthesis</h4>
           </div>
 
-          <div class="mt-8 mb-8">
+          <!-- <div class="mt-8 mb-8">
             <p class="mt-4 text-base">
               Under the standard zero-shot text-to-speech (TTS) inference pipeline, Vevo2 extends its support
               beyond speech data to <i>include singing voice data as reference prompts</i>,
@@ -200,132 +203,70 @@
               control (i.e., without using a prosodic source), the synthesized output could follow and extend
               the reference's melodic pattern, demonstrating melody imitation or continuation.
             </p>
-          </div>
+          </div> -->
 
           <div class="w-full overflow-x-auto">
             <div class="relative w-[1200px] mx-auto text-sm text-left rtl:text-right text-gray-900">
               <table class="table-gallery">
                 <thead>
                   <tr>
-                    <th style="text-align: center; width: 9%;">Task</th>
-                    <th style="text-align: center; width: 22%;">Target Text</th>
-                    <!-- <th style="text-align: center; width: 10%;">Prosodic Source</th> -->
-                    <th style="text-align: center; width: 23%;">Style Reference</th>
-                    <th style="text-align: center; width: 23%;">Timbre Reference</th>
-                    <th style="text-align: center; width: 23%;">Results</th>
+                    <th style="text-align: center; width: 10%;">Methods</th>
+                    <th style="text-align: center; width: 30%;">Lyrics</th>
+                    <th style="text-align: center; width: 30%;">Technique Prompts</th>
+                    <th style="text-align: center; width: 30%;">Results</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Text to Speech</b>
+                    <td style="background-color: #f4f4f4;">
+                      <b>Vevo</b>
+                    </td>
+                    <td rowspan="3">
+                      时间都去哪了还没好好感受年轻就老了
                     </td>
                     <td>
-                      In just a heartbeat, I can traverse oceans, cross mountains, and explore cities that I've only
-                      dreamed of.
-                    </td>
-                    <!-- <td rowspan="4">
-                      /
-                    </td> -->
-                    <td colspan="2">
                       <audio controls preload="auto">
-                        <source src="data/gallery/tts_ref.wav">
+                        <source src="data/gallery/tech_时间都去哪了_breathy.wav">
                       </audio>
-                      <!-- Who would've imagined that people could really turn into water... -->
-                      <!-- <i><span class="text-blue-500">High-pitched</span>, -->
                     </td>
                     <td>
                       <audio controls preload="auto">
-                        <source src="data/gallery/tts_gen.wav">
+                        <source src="data/gallery/vevo_时间都去哪儿了.wav">
                       </audio>
                     </td>
                   </tr>
 
                   <tr>
-                    <td>
-                      I've been a silent spectator, watching species evolve, empires rise and fall. But always remember,
-                      I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the
-                      consequences.
+                    <td style="background-color: #f4f4f4;">
+                      <b>TCSinger</b>
                     </td>
-
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_accent_ref.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, Male
+                    <td rowspan="2">
+                      <b>Breathy</b> for the first half, then <b>Pharyngeal</b> for the second half, with <b>Vibrato</b> at the end.
                     </td>
                     <td>
                       <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_timbre_ref.wav">
-                      </audio>
-                      Mandarin, <span class="text-red-500">Female</span>
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/disentangledtts_gen.wav">
-                      </audio>
-                      <span class="text-blue-500">Hindi-accented</span>, <span class="text-red-500">Female</span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td style="background-color: #f4f4f4;" rowspan="2">
-                      <b>Text to Singing</b>
-                    </td>
-                    <td>
-                      Don't forget me, I'm calling your name. I remember you said, love's not always the same.
-                    </td>
-
-                    <td colspan="2">
-                      <audio controls preload="auto">
-                        <source src="data/gallery/adele_raw.wav">
-                      </audio>
-                      Adele (British singer)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_adele_gen.wav">
+                        <source src="data/gallery/时间都去哪儿了tc.wav">
                       </audio>
                     </td>
                   </tr>
 
                   <tr>
-                    <td>
-                      我皱着眉头，感受着那份压力，但我知道我不能放弃，不能认输。于是，我深吸一口气，心底的声音告诉我
-                    </td>
-
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/jaychou.wav">
-                      </audio>
-                      周杰伦 (Chinese singer)
+                    <td style="background-color: #f4f4f4;">
+                      <b>ProSinger</b>
                     </td>
                     <td>
                       <audio controls preload="auto">
-                        <source src="data/gallery/taiyizhenren.wav">
-                      </audio>
-                      太乙真人 (Chinese animated character)
-                    </td>
-                    <td>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_gen.wav">
-                      </audio>
-                      <br>
-                      <i>When feeding this generated result into an external singing-to-song system:</i>
-                      <audio controls preload="auto">
-                        <source src="data/gallery/ttsing_sing2song.wav">
+                        <source src="data/gallery/时间都去哪了儿_bmpv.wav">
                       </audio>
                     </td>
                   </tr>
-
-
                 </tbody>
               </table>
 
               <p class="mt-2 text-sm text-gray-600 italic">
                 <i>
-                  <b>Note</b>: The prosodic
-                  source is not used during the inference.
+                  <b>Note</b>: We use the same audio clips for
+                  melody reference and timbre reference (unshown in the table).
                 </i>
               </p>
             </div>
